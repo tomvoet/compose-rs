@@ -1,6 +1,6 @@
 use crate::ComposeError;
 
-#[derive(Debug)]
+#[derive(Serialize, Debug)]
 pub struct PortMapping {
     pub host_ip: Option<String>,
     pub host_port: Option<u16>,
@@ -94,7 +94,7 @@ impl PortMapping {
     }
 }
 
-#[derive(Debug)]
+#[derive(Serialize, Debug)]
 pub enum Status {
     Up,
     Down,
@@ -120,7 +120,7 @@ impl Status {
     }
 }
 
-#[derive(Debug)]
+#[derive(Serialize, Debug)]
 pub struct ContainerStatus {
     pub status: Status,
     pub since: String,
@@ -155,7 +155,7 @@ impl ContainerStatus {
     }
 }
 
-#[derive(Debug)]
+#[derive(Serialize, Debug)]
 pub struct Container {
     pub name: String,
     pub image: String,

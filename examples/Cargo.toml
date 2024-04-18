@@ -7,7 +7,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dev-dependencies]
-compose-rs = { path = "../compose-rs", version = "0.0.2" }
+compose-rs = { path = "../compose-rs", version = "0.0.3" }
 anyhow = "1.0.82"
 
 [[example]]

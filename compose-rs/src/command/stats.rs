@@ -7,7 +7,7 @@ use std::{
 };
 
 use parse_size::parse_size;
-use serde::Deserialize;
+use serde::{Deserialize, Serialize};
 
 use crate::{parser, ComposeCommand, ComposeError};
 
@@ -15,13 +15,13 @@ use super::CatchOutput;
 
 //{"BlockIO":"0B / 0B","CPUPerc":"0.03%","Container":"9ca40acb565a","ID":"9ca40acb565a","MemPerc":"0.13%","MemUsage":"10MiB / 7.685GiB","Name":"examples-rqlite-1","NetIO":"1.39kB / 0B","PIDs":"10"}
 
-#[derive(Debug, Clone)]
+#[derive(Serialize, Debug, Clone)]
 pub struct StatsUsage {
     usage: u64,
     limit: u64,
 }
 
-#[derive(Debug, Clone)]
+#[derive(Serialize, Debug, Clone)]
 pub struct StatsIO {
     input: u64,
     output: u64,
@@ -93,7 +93,7 @@ impl<'de> serde::Deserialize<'de> for StatsUsage {
     }
 }
 
-#[derive(Debug, Clone)]
+#[derive(Serialize, Debug, Clone)]
 pub struct StatsPercentage(f64);
 
 impl<'de> serde::Deserialize<'de> for StatsPercentage {
@@ -124,7 +124,7 @@ impl<'de> serde::Deserialize<'de> for StatsPercentage {
     }
 }
 
-#[derive(Deserialize, Debug, Clone)]
+#[derive(Deserialize, Serialize, Debug, Clone)]
 #[serde(rename_all = "PascalCase")]
 pub struct Stats {
     #[serde(rename = "BlockIO")]

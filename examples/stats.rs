@@ -12,12 +12,7 @@ fn main() {
     //    println!("{:?}", service);
     //}
 
-    compose
-        .stats()
-        .stream()
-        .unwrap()
-        .into_iter()
-        .for_each(|service| {
-            println!("{:?}", service);
-        });
+    compose.stats().stream().unwrap().for_each(|service| {
+        println!("{:?}", service);
+    });
 }
