@@ -48,3 +48,11 @@ impl Compose {
         StatsCommand::new(self.init_command())
     }
 }
+
+pub mod prelude {
+    pub use crate::Compose;
+    pub use crate::ComposeBuilder;
+    pub use crate::ComposeBuilderError;
+    pub use crate::ComposeCommand;
+    pub use crate::ComposeError;
+}

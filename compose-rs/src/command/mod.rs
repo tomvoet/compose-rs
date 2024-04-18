@@ -9,7 +9,7 @@ mod ps;
 pub use ps::PsCommand;
 mod scale;
 pub use scale::ScaleCommand;
-mod stats;
+pub mod stats;
 pub use stats::StatsCommand;
 
 pub trait ComposeCommand<ReturnT, ArgType = ()>

@@ -24,7 +24,7 @@ This example demonstrates how to bring up a Docker Compose environment and monit
 ```rust
 use compose_rs::{Compose, ComposeCommand};
 
-async fn main() {
+fn main() {
     let compose = Compose::builder()
         .path("docker-compose.yml")
         .build()
