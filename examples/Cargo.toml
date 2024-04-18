@@ -1,0 +1,23 @@
+[package]
+name = "examples"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dev-dependencies]
+compose-rs = { path = "../compose-rs", version = "0.0.1" }
+anyhow = "1.0.82"
+
+[[example]]
+name = "basic"
+path = "basic.rs"
+
+[[example]]
+name = "scale"
+path = "scale.rs"
+
+[[example]]
+name = "stats"
+path = "stats.rs"

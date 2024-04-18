@@ -1,0 +1,4 @@
+services:
+  rqlite:
+    image: rqlite/rqlite:8.22.2
+    scale: 2
