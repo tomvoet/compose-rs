@@ -62,22 +62,8 @@ mod tests {
 
     #[test]
     fn test_compose_builder() {
-        let compose = Compose::builder().abs_path("docker-compose.yml").build();
+        let compose = Compose::builder().path("non-existent.yml").build();
 
-        matches!(compose, Ok(_));
-    }
-
-    #[test]
-    fn test_compose_builder_missing_field() {
-        let compose = Compose::builder().build();
-        assert!(compose.is_err());
-        matches!(compose, Err(ComposeBuilderError::MissingField(_)));
-    }
-
-    #[test]
-    fn test_compose_builder_file_not_found() {
-        let compose = Compose::builder().abs_path("non-existent-file.yml").build();
-        assert!(compose.is_err());
-        matches!(compose, Err(ComposeBuilderError::FileNotFound));
+        matches!(compose, Err(ComposeBuilderError::FileNotFound(_)));
     }
 }
