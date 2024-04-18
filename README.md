@@ -14,7 +14,7 @@ Add to your `Cargo.toml`:
 
 ```diff
 [dependencies]
-+ compose-rs = "0.1.0"
++ compose-rs = "0.0.3"
 ```
 
 ## Quick Start

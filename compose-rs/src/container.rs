@@ -1,3 +1,5 @@
+use serde::Serialize;
+
 use crate::ComposeError;
 
 #[derive(Serialize, Debug)]
