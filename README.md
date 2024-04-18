@@ -1,7 +1,3 @@
-Below is a simplified version of a README for your Rust library **compose-rs**, which facilitates interaction with Docker Compose. It includes basic features, installation guidance, and a quick start example, as you requested:
-
----
-
 # compose-rs
 
 **compose-rs** is a Rust library designed to manage Docker Compose environments programmatically. It provides a straightforward API for executing common Docker Compose commands directly from Rust code.
@@ -67,7 +63,3 @@ Contributions are welcome! Please feel free to contribute by opening issues or s
 ## License
 
 **compose-rs** is licensed under the MIT license. See LICENSE for details.
-
----
-
-This README follows a similar structure to your initial example but focuses more on the essentials, given the current state and capabilities of **compose-rs**. Adjustments can be made to the example and sections as the library evolves and more features are added.
