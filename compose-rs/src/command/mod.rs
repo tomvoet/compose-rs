@@ -11,6 +11,8 @@ mod scale;
 pub use scale::ScaleCommand;
 pub mod stats;
 pub use stats::StatsCommand;
+pub mod start;
+pub use start::StartCommand;
 
 pub trait ComposeCommand<ReturnT, ArgType = ()>
 where

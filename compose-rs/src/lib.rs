@@ -1,5 +1,5 @@
 mod error;
-use command::{DownCommand, PsCommand, ScaleCommand, StatsCommand, UpCommand};
+use command::{DownCommand, PsCommand, ScaleCommand, StatsCommand, UpCommand, StartCommand};
 pub use error::{ComposeBuilderError, ComposeError};
 mod builder;
 pub use builder::ComposeBuilder;
@@ -46,6 +46,10 @@ impl Compose {
 
     pub fn stats(&self) -> StatsCommand {
         StatsCommand::new(self.init_command())
+    }
+
+    pub fn start(&self) -> StartCommand {
+        StartCommand::new(self.init_command())
     }
 }
 
