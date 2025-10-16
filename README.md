@@ -5,7 +5,7 @@
 ## Features
 
 - **Easy Setup**: Quickly configure your Docker Compose path and start managing containers.
-- **Command Execution**: Support for basic Docker Compose commands like `up`, `down`, `ps`, and `stats`.
+- **Command Execution**: Support for basic Docker Compose commands like `up`, `down`, `ps`, `stats`, `scale`, and `start`.
 - **Stream Stats**: Stream statistics of services in real-time.
 
 ## Installation
