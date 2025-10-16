@@ -1,5 +1,5 @@
 mod error;
-use command::{DownCommand, PsCommand, ScaleCommand, StatsCommand, UpCommand, StartCommand};
+use command::{DownCommand, PsCommand, ScaleCommand, StartCommand, StatsCommand, UpCommand};
 pub use error::{ComposeBuilderError, ComposeError};
 mod builder;
 pub use builder::ComposeBuilder;

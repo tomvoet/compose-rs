@@ -7,37 +7,36 @@ fn main() {
         .unwrap();
 
     if let Err(e) = compose.up().exec() {
-        println!("Error: {}", e);
+        println!("Error: {e}");
     }
 
     match compose.ps().exec() {
         Ok(ps) => {
             for service in ps {
-                println!("{:?}", service);
+                println!("{service:?}");
             }
         }
         Err(e) => {
-            eprintln!("Error: {}", e);
+            eprintln!("Error: {e}");
         }
     }
 
     if let Err(e) = compose.scale().service(2, "rqlite").exec() {
-        println!("Error: {}", e);
+        println!("Error: {e}");
     }
 
     match compose.ps().exec() {
         Ok(ps) => {
             for service in ps {
-                println!("{:?}", service);
+                println!("{service:?}");
             }
         }
         Err(e) => {
-            eprintln!("Error: {}", e);
+            eprintln!("Error: {e}");
         }
     }
 
-    compose.down().exec();
     if let Err(e) = compose.down().exec() {
-        println!("Error: {}", e);
+        println!("Error: {e}");
     }
 }

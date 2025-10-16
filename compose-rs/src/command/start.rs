@@ -22,7 +22,7 @@ pub struct StartCommand {
 
 impl StartCommand {
     pub fn new(command: std::process::Command) -> Self {
-        Self { 
+        Self {
             command,
             args: Vec::new(),
         }

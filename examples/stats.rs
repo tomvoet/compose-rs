@@ -1,4 +1,4 @@
-use compose_rs::{Compose, ComposeCommand};
+use compose_rs::Compose;
 
 fn main() {
     let compose = Compose::builder()
@@ -13,6 +13,6 @@ fn main() {
     //}
 
     compose.stats().stream().unwrap().for_each(|service| {
-        println!("{:?}", service);
+        println!("{service:?}");
     });
 }

@@ -42,14 +42,7 @@ pub(crate) fn parse_ps(output: &str) -> Result<Vec<Container>, ComposeError> {
                 ports: parts[header_map["PORTS"]]
                     .split(", ")
                     .filter(|p| !p.is_empty())
-                    .flat_map(|p| {
-                        let port_mapping = PortMapping::from_string(p);
-
-                        match port_mapping {
-                            Ok(port_mapping) => port_mapping,
-                            Err(_) => vec![],
-                        }
-                    })
+                    .flat_map(|p| PortMapping::from_string(p).unwrap_or_default())
                     .collect(),
             }
         })

@@ -167,8 +167,7 @@ impl StatsCommand {
             .stdout(std::process::Stdio::piped())
             .spawn()?
             .stdout
-            .ok_or(ComposeError::IoError(std::io::Error::new(
-                std::io::ErrorKind::Other,
+            .ok_or(ComposeError::IoError(std::io::Error::other(
                 "Failed to open stdout",
             )))?;
 

@@ -41,14 +41,12 @@ impl PortMapping {
                 )?);
                 let start = start.parse().map_err(|_| {
                     ComposeError::ParseError(format!(
-                        "Invalid port mapping: invalid start port: {}",
-                        start
+                        "Invalid port mapping: invalid start port: {start}"
                     ))
                 })?;
                 let end = end.trim_start_matches('-').parse().map_err(|_| {
                     ComposeError::ParseError(format!(
-                        "Invalid port mapping: invalid end port: {}",
-                        end
+                        "Invalid port mapping: invalid end port: {end}"
                     ))
                 })?;
 
